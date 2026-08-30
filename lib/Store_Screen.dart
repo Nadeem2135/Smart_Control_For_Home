@@ -28,9 +28,9 @@ class _StoreScreen extends State<StoreScreen> {
         ),
         title: Text("Store", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
         centerTitle: true,
-        backgroundColor: Color(0xff1F243B),
+        backgroundColor: Color(0xff22242A),
       ),
-      backgroundColor: Color(0xff1F243B),
+      backgroundColor: Color(0xff22242A),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(

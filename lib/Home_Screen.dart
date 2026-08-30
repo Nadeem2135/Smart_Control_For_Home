@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
-        backgroundColor: Color(0xff1F243B),
+        backgroundColor: Color(0xff22242A),
         actions: [
 
         ],
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //   onPressed: (){}, child: Icon(Icons.add, color: Colors.white,),
       // ),
 
-      backgroundColor: Color(0xff1F243B),
+      backgroundColor: Color(0xff22242A),
       body: Column(
         children: [
           const SizedBox(height: 40,),
@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                         decoration: BoxDecoration(
-                          color: Color(0xff30324D),
+                          color: Color(0xff2C2E35),
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       child: Padding(
@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff30324D),
+                        color: Color(0xff2C2E35),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child: Padding(
@@ -164,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff30324D),
+                        color: Color(0xff2C2E35),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child: Padding(
@@ -204,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff30324D),
+                        color: Color(0xff2C2E35),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child:  Padding(
@@ -244,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff30324D),
+                        color: Color(0xff2C2E35),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child:  Padding(
@@ -284,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff30324D),
+                        color: Color(0xff2C2E35),
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child:  Padding(
