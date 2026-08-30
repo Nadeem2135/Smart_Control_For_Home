@@ -39,6 +39,7 @@ dependencies:
   font_awesome_flutter: ^11.0.0
   flutter_classic_bluetooth: ^0.1.9
   flutter_launcher_icons: ^0.14.4
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:
