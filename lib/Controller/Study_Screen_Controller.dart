@@ -28,6 +28,7 @@
 
 import 'dart:convert';
 import 'dart:typed_data';
+import 'dart:ui';
 import 'package:get/get.dart';
 import 'package:flutter_classic_bluetooth/flutter_classic_bluetooth.dart';
 
@@ -49,13 +50,13 @@ class StudyScreenController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    _initiateBluetoothConnection(); // Auto-connect when controller initializes
+    initiateBluetoothConnection(); // Auto-connect when controller initializes
   }
 
 
 
   // 1. REWRITTEN BLUETOOTH CONNECTION FUNCTION
-  void _initiateBluetoothConnection() async {
+  void initiateBluetoothConnection() async {
     try {
       // Fetch paired devices from phone system storage
       List<BtcDevice> bondedDevices = await _bluetooth.getPairedDevices();
@@ -74,8 +75,12 @@ class StudyScreenController extends GetxController {
 
         if (_activeConnection != null) {
           isConnected.value = true;
-          Get.snackbar("Connected", "Successfully linked to Study Room controller.",
-              snackPosition: SnackPosition.BOTTOM);
+          Get.snackbar(
+              "Connected", "Successfully linked to Study Room controller.",
+              snackPosition: SnackPosition.BOTTOM,
+              backgroundColor: Color(0xffffffff),
+              colorText: Color(0xff070101),
+          );
 
           // Use standard streams for incoming data communication
           _activeConnection!.input?.listen((Uint8List rawBytes) {
@@ -85,23 +90,39 @@ class StudyScreenController extends GetxController {
             // Handle accidental disconnection or range drop
             isConnected.value = false;
             _activeConnection = null;
-            Get.snackbar("Disconnected", "Room controller pipeline dropped.",
-                snackPosition: SnackPosition.BOTTOM);
+            Get.snackbar(
+                "Disconnected", "Room controller pipeline dropped.",
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: Color(0xffffffff),
+                colorText: Color(0xff070101),
+            );
           });
 
         } else {
           isConnected.value = false;
-          Get.snackbar("Connection Failed", "Could not establish pipeline link.",
-              snackPosition: SnackPosition.BOTTOM);
+          Get.snackbar(
+              "Connection Failed", "Could not establish pipeline link.",
+              snackPosition: SnackPosition.BOTTOM,
+              backgroundColor: Color(0xffffffff),
+              colorText: Color(0xff070101),
+          );
         }
       } else {
-        Get.snackbar("Error", "ESP32 not found. Pair it in Bluetooth settings first.",
-            snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar(
+            "Error", "ESP32 not found. Pair it in Bluetooth settings first.",
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Color(0xffffffff),
+            colorText: Color(0xff070101),
+        );
       }
     } catch (e) {
       isConnected.value = false;
-      Get.snackbar("Connection Error", "Could not connect: $e",
-          snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar(
+          "Connection Error", "Could not connect: $e",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Color(0xffffffff),
+          colorText: Color(0xff070101),
+      );
     }
   }
 
@@ -119,8 +140,12 @@ class StudyScreenController extends GetxController {
         print("Error sending data: $e");
       }
     } else {
-      Get.snackbar("Offline", "Not connected to the room controller.",
-          snackPosition: SnackPosition.BOTTOM);
+      Get.snackbar(
+          "Offline", "Not connected to the room controller.",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Color(0xffffffff),
+          colorText: Color(0xff070101),
+      );
     }
   }
 

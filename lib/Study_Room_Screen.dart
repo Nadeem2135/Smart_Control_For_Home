@@ -31,7 +31,12 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
         centerTitle: true,
         backgroundColor: Color(0xff22242A),
         actions: [
-          Obx(() => Icon(controller.isConnected.value ? Icons.bluetooth : Icons.bluetooth, color: controller.isConnected.value ? Color(0xff39FF14) : Color(0xffF2003D)),
+          Obx(() => InkWell(
+            onTap: (){
+              controller.initiateBluetoothConnection();
+            },
+              child: Icon(controller.isConnected.value ? Icons.bluetooth : Icons.bluetooth, color: controller.isConnected.value ? Color(0xff39FF14) : Color(0xffF2003D))
+          ),
           ),
           SizedBox(width: 10,),
         ],
