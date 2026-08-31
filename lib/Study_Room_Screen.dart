@@ -38,7 +38,7 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
               child: Icon(controller.isConnected.value ? Icons.bluetooth : Icons.bluetooth, color: controller.isConnected.value ? Color(0xff39FF14) : Color(0xffF2003D))
           ),
           ),
-          SizedBox(width: 10,),
+          SizedBox(width: 15,),
         ],
       ),
       backgroundColor: Color(0xff22242A),

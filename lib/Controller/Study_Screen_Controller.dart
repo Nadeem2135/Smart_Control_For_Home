@@ -77,9 +77,10 @@ class StudyScreenController extends GetxController {
           isConnected.value = true;
           Get.snackbar(
               "Connected", "Successfully linked to Study Room controller.",
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Color(0xffffffff),
-              colorText: Color(0xff070101),
+              snackPosition: SnackPosition.TOP,
+              backgroundColor: Color(0xff2C2E35),
+              duration: Duration(seconds: 2),
+              colorText: Color(0xffffffff),
           );
 
           // Use standard streams for incoming data communication
@@ -92,9 +93,10 @@ class StudyScreenController extends GetxController {
             _activeConnection = null;
             Get.snackbar(
                 "Disconnected", "Room controller pipeline dropped.",
-                snackPosition: SnackPosition.BOTTOM,
-                backgroundColor: Color(0xffffffff),
-                colorText: Color(0xff070101),
+                snackPosition: SnackPosition.TOP,
+                backgroundColor: Color(0xff2C2E35),
+                duration: Duration(seconds: 2),
+                colorText: Color(0xffffffff),
             );
           });
 
@@ -102,26 +104,30 @@ class StudyScreenController extends GetxController {
           isConnected.value = false;
           Get.snackbar(
               "Connection Failed", "Could not establish pipeline link.",
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Color(0xffffffff),
-              colorText: Color(0xff070101),
+              snackPosition: SnackPosition.TOP,
+              backgroundColor: Color(0xff2C2E35),
+              duration: Duration(seconds: 2),
+              colorText: Color(0xffffffff),
           );
         }
       } else {
         Get.snackbar(
             "Error", "ESP32 not found. Pair it in Bluetooth settings first.",
-            snackPosition: SnackPosition.BOTTOM,
-            backgroundColor: Color(0xffffffff),
-            colorText: Color(0xff070101),
+            snackPosition: SnackPosition.TOP,
+            // backgroundColor: Color(0xffffffff),
+            backgroundColor: Color(0xff2C2E35),
+            duration: Duration(seconds: 2),
+            colorText: Color(0xffffffff),
         );
       }
     } catch (e) {
       isConnected.value = false;
       Get.snackbar(
           "Connection Error", "Could not connect: $e",
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Color(0xffffffff),
-          colorText: Color(0xff070101),
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Color(0xff2C2E35),
+          duration: Duration(seconds: 2),
+          colorText: Color(0xffffffff),
       );
     }
   }
@@ -142,9 +148,10 @@ class StudyScreenController extends GetxController {
     } else {
       Get.snackbar(
           "Offline", "Not connected to the room controller.",
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Color(0xffffffff),
-          colorText: Color(0xff070101),
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Color(0xff2C2E35),
+          duration: Duration(seconds: 2),
+          colorText: Color(0xffffffff),
       );
     }
   }
