@@ -31,6 +31,7 @@ import 'dart:typed_data';
 import 'dart:ui';
 import 'package:get/get.dart';
 import 'package:flutter_classic_bluetooth/flutter_classic_bluetooth.dart';
+import 'package:get_storage/get_storage.dart';
 
 class StudyScreenController extends GetxController {
   RxBool notifications1 = false.obs;
@@ -43,6 +44,7 @@ class StudyScreenController extends GetxController {
   // Initialize the correct engine instance cleanly
   final FlutterClassicBluetooth _bluetooth = FlutterClassicBluetooth();
   final String _targetDeviceName = "ESP32_Relay_Controller";
+  final box = GetStorage();
 
   // Store the active connection instance object returned by flutter_classic_bluetooth
   BtcConnection? _activeConnection;
@@ -51,6 +53,16 @@ class StudyScreenController extends GetxController {
   void onInit() {
     super.onInit();
     initiateBluetoothConnection(); // Auto-connect when controller initializes
+    loadSavedStates();
+  }
+
+
+
+  // Load saved States
+  void loadSavedStates(){
+    notifications1.value = box.read('notifications1') ?? false;
+    notifications2.value = box.read('notifications2') ?? false;
+    notifications3.value = box.read('notifications3') ?? false;
   }
 
 
@@ -159,16 +171,19 @@ class StudyScreenController extends GetxController {
   // 2. SEPARATE RELAY CONTROL FUNCTIONS (Untouched API Signature)
   void setNotifications1(bool value){
     notifications1.value = value;
+    box.write('notifications1', value);
     _sendBluetoothCommand("1"); // Sends '1' to toggle Ceiling Fan
   }
 
   void setNotifications2(bool value){
     notifications2.value = value;
+    box.write('notifications2', value);
     _sendBluetoothCommand("2"); // Sends '2' to toggle Light
   }
 
   void setNotifications3(bool value){
     notifications3.value = value;
+    box.write('notifications3', value);
     _sendBluetoothCommand("3"); // Sends '3' to toggle TV
   }
 
