@@ -195,6 +195,8 @@ class StudyScreenController extends GetxController {
     }
     super.onClose();
   }
+
+
 }
 
 
