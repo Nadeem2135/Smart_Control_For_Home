@@ -54,7 +54,7 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 Obx(() =>   CupertinoSwitch(value: controller.notifications1.value, onChanged: (value){
                   controller.setNotifications1(value);
 
@@ -65,7 +65,7 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 Obx(() => CupertinoSwitch(value: controller.notifications2.value, onChanged: (value){
                   controller.setNotifications2(value);
                 }),),
@@ -76,7 +76,7 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 Obx(() =>  CupertinoSwitch(value: controller.notifications3.value, onChanged: (value){
                   controller.setNotifications3(value);
                 }),),

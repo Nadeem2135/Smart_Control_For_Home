@@ -44,7 +44,7 @@ class _BedroomScreenState extends State<BedroomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications1, onChanged: (value){
                   notifications1 = value;
                   setState(() {
@@ -57,7 +57,7 @@ class _BedroomScreenState extends State<BedroomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications2, onChanged: (value){
                   notifications2 = value;
                   setState(() {
@@ -70,7 +70,7 @@ class _BedroomScreenState extends State<BedroomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications3, onChanged: (value){
                   notifications3 = value;
                   setState(() {
@@ -83,7 +83,7 @@ class _BedroomScreenState extends State<BedroomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("AC", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("AC", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications4, onChanged: (value){
                   notifications4 = value;
                   setState(() {

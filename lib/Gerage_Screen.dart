@@ -42,7 +42,7 @@ class _StoreScreen extends State<GarageScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications1, onChanged: (value){
                   notifications1 = value;
                   setState(() {
@@ -55,7 +55,7 @@ class _StoreScreen extends State<GarageScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Rolling Door", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Rolling Door", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications2, onChanged: (value){
                   notifications2 = value;
                   setState(() {

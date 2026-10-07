@@ -43,7 +43,7 @@ class _StoreScreen extends State<StoreScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications1, onChanged: (value){
                   notifications1 = value;
                   setState(() {
@@ -56,7 +56,7 @@ class _StoreScreen extends State<StoreScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications2, onChanged: (value){
                   notifications2 = value;
                   setState(() {
@@ -69,7 +69,7 @@ class _StoreScreen extends State<StoreScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Exhaust", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Text("Exhaust", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
                 CupertinoSwitch(value: notifications3, onChanged: (value){
                   notifications3 = value;
                   setState(() {
