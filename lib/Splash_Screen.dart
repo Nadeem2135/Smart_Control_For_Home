@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3), (){
+    Future.delayed(Duration(seconds: 1), (){
       return Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
     });
 
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff22242A),
+      backgroundColor: Colors.grey[300],
       body: Center(
           child: SizedBox(
             height: 100,

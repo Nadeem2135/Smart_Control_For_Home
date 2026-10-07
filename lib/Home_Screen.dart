@@ -22,35 +22,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Hello User", style: TextStyle(color: Colors.white),),
-              SizedBox(width: 7,),
-              Icon(Icons.waving_hand, color: Colors.amber,),
-              SizedBox(width: 7,),
-              Text("Welcome to Home", style: TextStyle(color: Colors.white),),
-            ],
-          ),
-        ),
+        title:  Text("Dashboard", style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.bold),),
         centerTitle: true,
         iconTheme: IconThemeData(
-          color: Colors.white,
+          color: Colors.grey[700],
         ),
-        backgroundColor: Color(0xff22242A),
+        // backgroundColor: Color(0xff22242A),
+        backgroundColor: Colors.grey[300],
         actions: [
 
         ],
       ),
       // floatingActionButton: FloatingActionButton(
       //   backgroundColor: Color(0xff30324D),
-      //   onPressed: (){}, child: Icon(Icons.add, color: Colors.white,),
+      //   onPressed: (){}, child: Icon(Icons.add, color: Colors.grey[700],,),
       // ),
 
-      backgroundColor: Color(0xff22242A),
+      // backgroundColor: Color(0xff22242A),
+      backgroundColor: Colors.grey[300],
       body: Column(
         children: [
           const SizedBox(height: 40,),
@@ -63,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 30.0,
                   mainAxisSpacing: 30.0,
-                  childAspectRatio: 1.0,
+                  childAspectRatio: 1/1.2,
                 ),
 
                 children: [
@@ -83,7 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                         decoration: BoxDecoration(
-                          color: Color(0xff2C2E35),
+                          // color: Colors.grey[200],
+                          color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       child: Padding(
@@ -98,9 +88,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundImage: AssetImage('assets/study_room.png'),
                             ),
                             SizedBox(height: 5,),
-                            Text("Study Room", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                            Text("Study Room", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800]),),
                             SizedBox(height: 5,),
-                            Text("3 Devices", style: TextStyle(color: Colors.white),),
+                            Text("3 Devices", style: TextStyle(color: Colors.grey[800]),),
                           ],
                         ),
                       ),
@@ -124,7 +114,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff2C2E35),
+                        // color: Colors.grey[200],
+                        color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child: Padding(
@@ -139,9 +130,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundImage: AssetImage('assets/bedroom.png'),
                             ),
                             SizedBox(height: 5,),
-                            Text("Bedroom", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                            Text("Bedroom", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800]),),
                             SizedBox(height: 5,),
-                            Text("4 Devices",  style: TextStyle(color: Colors.white),),
+                            Text("4 Devices",  style: TextStyle(color: Colors.grey[800]),),
                           ],
                         ),
                       ),
@@ -164,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff2C2E35),
+                        color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child: Padding(
@@ -179,9 +170,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundImage: AssetImage('assets/kitchen.png',),
                             ),
                             SizedBox(height: 5,),
-                            Text("Kitchen", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                            Text("Kitchen", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800],),),
                             SizedBox(height: 5,),
-                            Text("5 Devices",  style: TextStyle(color: Colors.white),),
+                            Text("5 Devices",  style: TextStyle(color: Colors.grey[800],),),
                           ],
                         ),
                       ),
@@ -204,7 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff2C2E35),
+                        color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child:  Padding(
@@ -219,9 +210,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundImage: AssetImage('assets/living_room.png'),
                             ),
                             SizedBox(height: 5,),
-                            Text("Living Room", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                            Text("Living Room", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800],),),
                             SizedBox(height: 5,),
-                            Text("4 Devices",  style: TextStyle(color: Colors.white),),
+                            Text("4 Devices",  style: TextStyle(color: Colors.grey[800],),),
                           ],
                         ),
                       ),
@@ -244,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff2C2E35),
+                        color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child:  Padding(
@@ -259,9 +250,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundImage: AssetImage('assets/store.png'),
                             ),
                             SizedBox(height: 5,),
-                            Text("Store", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                            Text("Store", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800],),),
                             SizedBox(height: 5,),
-                            Text("3 Devices",  style: TextStyle(color: Colors.white),),
+                            Text("3 Devices",  style: TextStyle(color: Colors.grey[800],),),
                           ],
                         ),
                       ),
@@ -284,7 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Container(
 
                       decoration: BoxDecoration(
-                        color: Color(0xff2C2E35),
+                        color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(30.0),
                       ),
                       child:  Padding(
@@ -299,9 +290,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 backgroundImage: AssetImage('assets/garage.png'),
                             ),
                             SizedBox(height: 5,),
-                            Text("Garage", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+                            Text("Garage", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.grey[800],),),
                             SizedBox(height: 5,),
-                            Text("2 Devices",  style: TextStyle(color: Colors.white),),
+                            Text("2 Devices",  style: TextStyle(color: Colors.grey[800],),),
                           ],
                         ),
                       ),

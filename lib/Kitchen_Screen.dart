@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,13 +27,15 @@ class _KitchenScreenState extends State<KitchenScreen> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-            color: Colors.white
+            color: Colors.grey[800],
         ),
-        title: Text("Kitchen", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+        title: Text("Kitchen", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),),
         centerTitle: true,
-        backgroundColor: Color(0xff22242A),
+        // backgroundColor: Color(0xff22242A),
+        backgroundColor: Colors.grey[300],
       ),
-      backgroundColor: Color(0xff22242A),
+      // backgroundColor: Color(0xff22242A),
+      backgroundColor: Colors.grey[300],
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -42,8 +45,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Fridge", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications1, onChanged: (value){
+                Text("Fridge", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications1, onChanged: (value){
                   notifications1 = value;
                   setState(() {
 
@@ -55,8 +58,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications2, onChanged: (value){
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications2, onChanged: (value){
                   notifications2 = value;
                   setState(() {
 
@@ -68,8 +71,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Fan", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications3, onChanged: (value){
+                Text("Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications3, onChanged: (value){
                   notifications3 = value;
                   setState(() {
 
@@ -81,8 +84,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Oven", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications4, onChanged: (value){
+                Text("Oven", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications4, onChanged: (value){
                   notifications4 = value;
                   setState(() {
 
@@ -94,8 +97,8 @@ class _KitchenScreenState extends State<KitchenScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Exhaust", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications5, onChanged: (value){
+                Text("Exhaust", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications5, onChanged: (value){
                   notifications5 = value;
                   setState(() {
 

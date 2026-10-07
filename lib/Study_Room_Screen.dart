@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -25,11 +26,12 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.white
+          color: Colors.grey[800]
         ),
-        title: Text("Study Room", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+        title: Text("Study Room", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),),
         centerTitle: true,
-        backgroundColor: Color(0xff22242A),
+        // backgroundColor: Color(0xff22242A),
+        backgroundColor: Colors.grey[300],
         actions: [
           Obx(() => InkWell(
             onTap: (){
@@ -41,7 +43,8 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
           SizedBox(width: 15,),
         ],
       ),
-      backgroundColor: Color(0xff22242A),
+      // backgroundColor: Color(0xff22242A),
+      backgroundColor: Colors.grey[300],
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -51,8 +54,8 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Obx(() =>   Switch(value: controller.notifications1.value, onChanged: (value){
+                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Obx(() =>   CupertinoSwitch(value: controller.notifications1.value, onChanged: (value){
                   controller.setNotifications1(value);
 
                 }),),
@@ -62,8 +65,8 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Obx(() => Switch(value: controller.notifications2.value, onChanged: (value){
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Obx(() => CupertinoSwitch(value: controller.notifications2.value, onChanged: (value){
                   controller.setNotifications2(value);
                 }),),
 
@@ -73,8 +76,8 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("TV", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Obx(() =>  Switch(value: controller.notifications3.value, onChanged: (value){
+                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                Obx(() =>  CupertinoSwitch(value: controller.notifications3.value, onChanged: (value){
                   controller.setNotifications3(value);
                 }),),
 

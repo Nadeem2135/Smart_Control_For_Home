@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -25,13 +26,15 @@ class _LivingRoomScreenState extends State<LivingRoomScreen> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-            color: Colors.white
+            color: Colors.grey[800],
         ),
-        title: Text("Living Room", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+        title: Text("Living Room", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey[800]),),
         centerTitle: true,
-        backgroundColor: Color(0xff22242A),
+        // backgroundColor: Color(0xff22242A),
+        backgroundColor: Colors.grey[300],
       ),
-      backgroundColor: Color(0xff22242A),
+      // backgroundColor: Color(0xff22242A),
+      backgroundColor: Colors.grey[300],
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
@@ -41,8 +44,8 @@ class _LivingRoomScreenState extends State<LivingRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Fan", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications1, onChanged: (value){
+                Text("Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications1, onChanged: (value){
                   notifications1 = value;
                   setState(() {
 
@@ -54,8 +57,8 @@ class _LivingRoomScreenState extends State<LivingRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications2, onChanged: (value){
+                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications2, onChanged: (value){
                   notifications2 = value;
                   setState(() {
 
@@ -67,8 +70,8 @@ class _LivingRoomScreenState extends State<LivingRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("TV", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications3, onChanged: (value){
+                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications3, onChanged: (value){
                   notifications3 = value;
                   setState(() {
 
@@ -80,8 +83,8 @@ class _LivingRoomScreenState extends State<LivingRoomScreen> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text("AC", style: TextStyle(fontSize: 18, color: Colors.white),),
-                Switch(value: notifications4, onChanged: (value){
+                Text("AC", style: TextStyle(fontSize: 18, color: Colors.grey[800]),),
+                CupertinoSwitch(value: notifications4, onChanged: (value){
                   notifications4 = value;
                   setState(() {
 

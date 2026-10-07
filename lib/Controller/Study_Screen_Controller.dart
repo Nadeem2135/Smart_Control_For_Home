@@ -29,6 +29,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 import 'dart:ui';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_classic_bluetooth/flutter_classic_bluetooth.dart';
 import 'package:get_storage/get_storage.dart';
@@ -46,7 +47,7 @@ class StudyScreenController extends GetxController {
   final String _targetDeviceName = "ESP32_Relay_Controller";
   final box = GetStorage();
 
-  // Store the active connection instance object returned by flutter_classic_bluetooth
+  // Active connection instance object returned by flutter_classic_bluetooth
   BtcConnection? _activeConnection;
 
   @override
@@ -90,12 +91,13 @@ class StudyScreenController extends GetxController {
           Get.snackbar(
               "Connected", "Successfully linked to Study Room controller.",
               snackPosition: SnackPosition.TOP,
-              backgroundColor: Color(0xff2C2E35),
+              // backgroundColor: Colors.grey[200],
+              backgroundColor: Colors.grey[300],
               duration: Duration(seconds: 2),
-              colorText: Color(0xffffffff),
+              colorText: Colors.grey[800],
           );
 
-          // Use standard streams for incoming data communication
+          // standard streams for incoming data communication
           _activeConnection!.input?.listen((Uint8List rawBytes) {
             String incomingMessage = utf8.decode(rawBytes);
             print("Received from ESP32: $incomingMessage");
@@ -106,9 +108,9 @@ class StudyScreenController extends GetxController {
             Get.snackbar(
                 "Disconnected", "Room controller pipeline dropped.",
                 snackPosition: SnackPosition.TOP,
-                backgroundColor: Color(0xff2C2E35),
+                backgroundColor: Colors.grey[200],
                 duration: Duration(seconds: 2),
-                colorText: Color(0xffffffff),
+                colorText: Colors.grey[800],
             );
           });
 
@@ -117,9 +119,9 @@ class StudyScreenController extends GetxController {
           Get.snackbar(
               "Connection Failed", "Could not establish pipeline link.",
               snackPosition: SnackPosition.TOP,
-              backgroundColor: Color(0xff2C2E35),
+              backgroundColor: Colors.grey[200],
               duration: Duration(seconds: 2),
-              colorText: Color(0xffffffff),
+              colorText: Colors.grey[800],
           );
         }
       } else {
@@ -127,9 +129,9 @@ class StudyScreenController extends GetxController {
             "Error", "ESP32 not found. Pair it in Bluetooth settings first.",
             snackPosition: SnackPosition.TOP,
             // backgroundColor: Color(0xffffffff),
-            backgroundColor: Color(0xff2C2E35),
+            backgroundColor: Colors.grey[200],
             duration: Duration(seconds: 2),
-            colorText: Color(0xffffffff),
+            colorText: Colors.grey[800],
         );
       }
     } catch (e) {
@@ -137,21 +139,21 @@ class StudyScreenController extends GetxController {
       Get.snackbar(
           "Connection Error", "Could not connect: $e",
           snackPosition: SnackPosition.TOP,
-          backgroundColor: Color(0xff2C2E35),
+          backgroundColor: Colors.grey[200],
           duration: Duration(seconds: 2),
-          colorText: Color(0xffffffff),
+          colorText: Colors.grey[800],
       );
     }
   }
 
-  // Helper function rewritten to use pure stream-based Sink operations
+  // Helper function to send command
   void _sendBluetoothCommand(String command) async {
     if (isConnected.value && _activeConnection != null) {
       try {
         // Convert string payload into raw byte buffers (Uint8List) as required
         final Uint8List bytes = utf8.encode("$command\n");
 
-        // Push bytes straight to the active connection sink output
+        // Push bytes straight to the active connection output
         _activeConnection!.output.add(bytes);
         await _activeConnection!.output.allSent;
       } catch (e) {
@@ -161,14 +163,15 @@ class StudyScreenController extends GetxController {
       Get.snackbar(
           "Offline", "Not connected to the room controller.",
           snackPosition: SnackPosition.TOP,
-          backgroundColor: Color(0xff2C2E35),
+          backgroundColor: Colors.grey[200],
           duration: Duration(seconds: 2),
-          colorText: Color(0xffffffff),
+          colorText: Colors.grey[800],
+
       );
     }
   }
 
-  // 2. SEPARATE RELAY CONTROL FUNCTIONS (Untouched API Signature)
+  // Separate relay control functions
   void setNotifications1(bool value){
     notifications1.value = value;
     box.write('notifications1', value);
@@ -190,7 +193,7 @@ class StudyScreenController extends GetxController {
   @override
   void onClose() {
     if (_activeConnection != null) {
-      // Clean up the wireless stream socket channel elegantly
+      // Clean up the wireless stream socket
       _activeConnection!.close();
     }
     super.onClose();
