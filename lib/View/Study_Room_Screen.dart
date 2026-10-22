@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import 'Controller/Study_Screen_Controller.dart';
+import '../Controller/Study_Screen_Controller.dart';
 
 
 class StudyRoomScreen extends StatefulWidget {
