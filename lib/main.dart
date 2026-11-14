@@ -23,9 +23,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData.light(useMaterial3: true),
-      // darkTheme: ThemeData.dark(useMaterial3: true),
-      // themeMode: ThemeMode.system,
+      // theme: ThemeData.light(),
+      // darkTheme: ThemeData.dark(),
+      // themeMode: ThemeMode.light,
       title: "Smart Home",
       home: SplashScreen(),
     );

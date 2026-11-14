@@ -23,6 +23,8 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    print("Rebuild");
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -45,46 +47,118 @@ class _StudyRoomScreenState extends State<StudyRoomScreen> {
       ),
       // backgroundColor: Color(0xff22242A),
       backgroundColor: Colors.grey[300],
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          children: [
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
 
-            SizedBox(height: height * .05,),
-            Row(
-              mainAxisAlignment: .spaceBetween,
-              children: [
-                Text("Ceiling Fan", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
-                Obx(() =>   CupertinoSwitch(value: controller.notifications1.value, onChanged: (value){
-                  controller.setNotifications1(value);
+              SizedBox(height: height * .05,),
 
-                }),),
-              ],
-            ),
-            SizedBox(height: height * .05,),
-            Row(
-              mainAxisAlignment: .spaceBetween,
-              children: [
-                Text("Light", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
-                Obx(() => CupertinoSwitch(value: controller.notifications2.value, onChanged: (value){
-                  controller.setNotifications2(value);
-                }),),
+              Container(
+                height: 100,
+                width: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Column(
+                  mainAxisAlignment: .center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
 
-              ],
-            ),
-            SizedBox(height: height * .05,),
-            Row(
-              mainAxisAlignment: .spaceBetween,
-              children: [
-                Text("TV", style: TextStyle(fontSize: 18, color: Colors.grey[800], fontWeight: FontWeight.bold),),
-                Obx(() =>  CupertinoSwitch(value: controller.notifications3.value, onChanged: (value){
-                  controller.setNotifications3(value);
-                }),),
+                          Column(
+                            crossAxisAlignment: .start,
+                            children: [
+                              Text("Ceiling Fan", style: TextStyle(fontSize: 15, color: Colors.grey[800], fontWeight: FontWeight.bold),),
+                              SizedBox(height: 15,),
+                              Obx(() =>  CupertinoSwitch(value: controller.notifications1.value, onChanged: (value){
+                                controller.setNotifications1(value);
+                              }),),
+                            ],
+                          ),
+                          Obx(() => Image.asset("assets/icons/fan.png", height: 50, width: 50, color: controller.notifications1.value ? Colors.green : Colors.red,),),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Container(
+                height: 100,
+                width: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Column(
+                  mainAxisAlignment: .center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
 
-              ],
-            ),
+                          Column(
+                            crossAxisAlignment: .start,
+                            children: [
+                              Text("Light", style: TextStyle(fontSize: 15, color: Colors.grey[800], fontWeight: FontWeight.bold),),
+                              SizedBox(height: 15,),
+                              Obx(() =>  CupertinoSwitch(value: controller.notifications2.value, onChanged: (value){
+                                controller.setNotifications2(value);
+                              }),),
+                            ],
+                          ),
+                          Obx(() => Image.asset("assets/icons/idea.png", height: 50, width: 50, color: controller.notifications2.value ? Colors.green : Colors.red,),),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(height: 10,),
+              Container(
+                height: 100,
+                width: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Column(
+                  mainAxisAlignment: .center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: .spaceBetween,
+                        children: [
 
-          ],
+                          Column(
+                            crossAxisAlignment: .start,
+                            children: [
+                              Text("Smart TV", style: TextStyle(fontSize: 15, color: Colors.grey[800], fontWeight: FontWeight.bold),),
+                              SizedBox(height: 15,),
+                              Obx(() =>  CupertinoSwitch(value: controller.notifications3.value, onChanged: (value){
+                                controller.setNotifications3(value);
+                              }),),
+                            ],
+                          ),
+                          Obx(() => Image.asset("assets/icons/smart-tv.png", height: 50, width: 50, color: controller.notifications3.value ? Colors.green : Colors.red,),),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+
+            ],
+          ),
         ),
       ),
     );
